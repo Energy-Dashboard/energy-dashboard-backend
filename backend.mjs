@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import swaggerUi from "swagger-ui-express";
@@ -10,6 +11,7 @@ dotenv.config();
 mongoose.connect(process.env.DATABASE_URL);
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use(PopulateDatabaseController);
 app.use(EnergyRoutes);
@@ -20,4 +22,5 @@ app.get("/", (req, res) => {
 
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
+console.log("Server running on port 3000: http://localhost:3000/");
 app.listen(3000);
