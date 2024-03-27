@@ -96,3 +96,12 @@ export const getEnergiesByYear = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
+
+export const getCountries = async (req, res) => {
+  try {
+    const countries = await Energy.distinct("entity");
+    res.json(countries);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};

@@ -7,7 +7,7 @@ function filterDataByQuery(query, data) {
     } else {
       const [minMax, value] = key.split("-");
       if (minMax !== "min" && minMax !== "max") {
-        return data;
+        data = data;
       }
       if (minMax === "min") {
         data = data.filter((energy) => energy[value] >= query[key]);
