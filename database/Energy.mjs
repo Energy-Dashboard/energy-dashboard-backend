@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const EnergySchema = new Schema({
+const EnergySchema = new mongoose.Schema({
   entity: String,
   year: Number,
   accessElectricity: Number,
