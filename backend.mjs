@@ -11,7 +11,11 @@ dotenv.config();
 mongoose.connect(process.env.DATABASE_URL);
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,
+  })
+);
 app.use(express.json());
 app.use(PopulateDatabaseController);
 app.use(EnergyRoutes);
