@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "nodemon backend.mjs && node swagger.mjs"
+    "dev": "nodemon backend.mjs && node swagger.mjs",
+    "start": "node backend.mjs"
   },
   "dependencies": {
     "cors": "^2.8.5",
